@@ -299,7 +299,7 @@ app.post('/', async (req, res) => {
 });
 
 // Start server
-app.listen(PORT, '127.0.0.1', () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`PayPal webhook receiver running on port ${PORT}`);
   console.log(`Endpoint: ${WEBHOOK_PATH}`);
   console.log(`Webhook ID configured: ${PAYPAL_WEBHOOK_ID ? 'Yes' : 'NO - set PAYPAL_WEBHOOK_ID!'}`);
