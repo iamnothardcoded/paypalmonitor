@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  paypal-webhook:
+    build: .
+    container_name: paypal-webhook
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - PAYPAL_WEBHOOK_ID=your_webhook_id
+      - PAYPAL_CLIENT_ID=your_client_id
+      - PAYPAL_CLIENT_SECRET=your_client_secret
+      - TELEGRAM_BOT_TOKEN=your_telegram_bot_token  # optional
+      - TELEGRAM_CHAT_ID=your_telegram_chat_id      # optional
+      - NODE_ENV=production
+    volumes:
+      - ./logs:/app/logs
